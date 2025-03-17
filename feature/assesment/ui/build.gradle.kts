@@ -45,8 +45,6 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
-    implementation(project(":core:network"))
-    implementation(project(":core:feature_api"))
     implementation(project(":feature:assesment:domain"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
