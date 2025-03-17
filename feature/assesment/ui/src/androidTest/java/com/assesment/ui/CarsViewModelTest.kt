@@ -1,11 +1,10 @@
 package com.assesment.ui
 
-import com.assesment.domain.model.Image
+import com.assesment.domain.model.CarSearchResponseItem
 import com.assesment.domain.repo.RepoInterface
 import com.assesment.domain.usecases.GetCarsListUseCase
 import com.assesment.ui.navigation.viewmodel.CarsViewModel
 import com.core.network.api.ApiService
-import com.core.network.model.CarSearchResponseItem
 import com.core.network.repository.CarsRepository
 import io.mockk.MockKAnnotations
 import io.mockk.every
