@@ -8,3 +8,37 @@ ui - contains designs or view classes using jetpack compose
 domain- contains classes related to implemntation (business logic)
 data- holds the model classes and mapper classes
 to install directly after clone the prject directly run the project.
+
+
+Folder Structure
+Core Module-> Network module
+di: NetworkModule provides global dependencies
+api- ApiService for api calls,CarsSearchResponse for api response, CarsRepository to provide function to fetch data wherever it is required.
+
+Common module 
+Uievent - which is commonn class 
+
+Data Module:
+di: DataLayerModule and repository binding
+RepoImp - to bind and map data to data class.
+
+Domain Module
+di :DomainLayerModule binds domain dependencies
+model CarSearchResponseItem hold the data and mapped from reponse
+usecase: GetCarsListUseCase to retrive car list, GetImageUseCase to fetch image
+
+ui module
+screen :CarSearchScreen show list of cars
+util - contains all the gerenric class such as LoadingBar
+CarSearchStateHolder- hold the state of CarSearchScreen
+ToolbarWidget- show app bar
+View Model - bind the usecases and call the api using lauch coroutine.
+
+
+
+
+
+
+
+
+
