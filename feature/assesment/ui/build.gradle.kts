@@ -73,7 +73,9 @@ dependencies {
     implementation (libs.androidx.material)
     implementation (libs.accompanist.pager)
     testImplementation (libs.mockk.mockk)
-    androidTestImplementation (libs.mockk)
+    testImplementation (libs.mockk)
+    testImplementation (libs.kotlinx.coroutines.test)
+    testImplementation(kotlin("test"))
 
 
 }

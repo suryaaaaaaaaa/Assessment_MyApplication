@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class GetCarsListUseCase @Inject constructor(private val repoInterface: RepoInterface) {
     operator  fun invoke()= flow {
-        emit(UiEvent.Loading())
+         emit(UiEvent.Loading())
          emit(UiEvent.Success(repoInterface.getCarsList()))
     }.catch {
         emit(UiEvent.Error())

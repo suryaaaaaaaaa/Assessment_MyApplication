@@ -5,7 +5,7 @@ import com.assesment.domain.repo.RepoInterface
 import com.core.network.repository.CarsRepository
 import javax.inject.Inject
 
-class RepoImpl @Inject constructor(private val provider: CarsRepository) : RepoInterface {
+class CarsRemoteDataSource @Inject constructor(private val provider: CarsRepository) : RepoInterface {
     override suspend fun getCarsList(): List<CarSearchResponseItem> {
         return provider.getCars().map { it ->
             CarSearchResponseItem(

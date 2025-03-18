@@ -22,7 +22,7 @@ class ImageViewModel @Inject constructor(
 
     }
 
-    private fun getImages(images: List<String>) =viewModelScope.launch {
+    fun getImages(images: List<String>) =viewModelScope.launch {
         _imageList.value = ImageStateHolder(images = images)
         }
     }
