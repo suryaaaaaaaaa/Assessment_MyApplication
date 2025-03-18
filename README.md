@@ -1,4 +1,5 @@
 **This is an assessment application.**<br>
+App is consists of two screens: one for displaying a list of news items fetched from car Api, and other showing the image of car as detail.
 Here, used multi module architecture with hilt and clean architecture 
 there module mainly been used core , network, feature.
 core - all utill classes and common cleasses being added.<br><br>
