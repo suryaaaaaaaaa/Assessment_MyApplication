@@ -2,7 +2,7 @@
 Here, used multi module architecture with hilt and clean architecture 
 there module mainly been used core , network, feature.
 core - all utill classes and common cleasses being added.<br><br>
-**network** - all network related classes being added<br>
+* **network** - all network related classes being added<br>
 **feature**- it specify and contains feature related stuff which sub categoriezed among ui, domain, data<br>
 **ui** - contains designs or view classes using jetpack compose<br>
 **domain**- contains classes related to implemntation (business logic)<br>
