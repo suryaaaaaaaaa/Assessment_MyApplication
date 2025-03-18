@@ -1,38 +1,38 @@
 **This is an assessment application.**<br>
 Here, used multi module architecture with hilt and clean architecture 
 there module mainly been used core , network, feature.
-core - all utill classes and common cleasses being added.<br>
-**network** - all network related classes being added
-**feature**- it specify and contains feature related stuff which sub categoriezed among ui, domain, data
-**ui** - contains designs or view classes using jetpack compose
-**domain**- contains classes related to implemntation (business logic)
+core - all utill classes and common cleasses being added.<br><br>
+**network** - all network related classes being added<br>
+**feature**- it specify and contains feature related stuff which sub categoriezed among ui, domain, data<br>
+**ui** - contains designs or view classes using jetpack compose<br>
+**domain**- contains classes related to implemntation (business logic)<br>
 **data**- holds the model classes and mapper classes<br>
 
-To install directly after clone the prject directly run the project.
+To install directly after clone the prject directly run the project.<br><br>
 
 **Folder Structure**
 Core Module: Network module
 di: NetworkModule provides global dependencies
-api- ApiService for api calls,CarsSearchResponse for api response, CarsRepository to provide function to fetch data wherever it is required.
+api- ApiService for api calls,CarsSearchResponse for api response, CarsRepository to provide function to fetch data wherever it is required.<br>
 
 **Common module**
-Uievent - which is commonn class 
+Uievent - which is commonn class <br>
 
 **Data Module:**
-di: DataLayerModule and repository binding
-RepoImp - to bind and map data to data class.
+di: DataLayerModule and repository binding 
+RepoImp - to bind and map data to data class.<br>
 
 **Domain Module**
 di :DomainLayerModule binds domain dependencies
 model CarSearchResponseItem hold the data and mapped from reponse
-usecase: GetCarsListUseCase to retrive car list, GetImageUseCase to fetch image
+usecase: GetCarsListUseCase to retrive car list, GetImageUseCase to fetch image<br>
 
 **ui module**
 screen :CarSearchScreen show list of cars
 util - contains all the gerenric class such as LoadingBar
 CarSearchStateHolder- hold the state of CarSearchScreen
 ToolbarWidget- show app bar
-View Model - bind the usecases and call the api using lauch coroutine.
+View Model - bind the usecases and call the api using lauch coroutine.<br>
 
 
 
