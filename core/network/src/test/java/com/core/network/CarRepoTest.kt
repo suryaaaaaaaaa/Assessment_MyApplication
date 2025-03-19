@@ -2,7 +2,7 @@ package com.core.network
 
 import com.core.network.api.DataSource
 import com.core.network.model.CarSearchResponseItem
-import com.core.network.repository.CarsRepositoryImpl
+import com.core.network.repository.DataSourceImpl
 import io.mockk.coEvery
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
@@ -13,7 +13,7 @@ class CarRepoTest {
 
     @Test
     fun canGetCarFromApi() =runTest{
-        val repo= mockk<CarsRepositoryImpl>()
+        val repo= mockk<DataSourceImpl>()
         val carList=listOf(
             CarSearchResponseItem(
             1,

@@ -1,7 +1,7 @@
 package com.feature.assessment.data.di
 
 import com.assesment.domain.repo.CarRepository
-import com.core.network.repository.CarsRepositoryImpl
+import com.core.network.repository.DataSourceImpl
 import com.feature.assessment.data.repo.CarsRemoteDataSource
 import dagger.Module
 import dagger.Provides
@@ -12,7 +12,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object DataLayerModule {
     @Provides
-    fun provideCarRepo(provides: CarsRepositoryImpl): CarRepository {
+    fun provideCarRepo(provides: DataSourceImpl): CarRepository {
         return CarsRemoteDataSource(provides)
     }
 }

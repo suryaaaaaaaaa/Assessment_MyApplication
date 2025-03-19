@@ -3,10 +3,10 @@ package com.feature.assessment.data.repo
 import com.assesment.domain.model.CarSearchResponseItem
 import com.assesment.domain.model.Image
 import com.assesment.domain.repo.CarRepository
-import com.core.network.repository.CarsRepositoryImpl
+import com.core.network.repository.DataSourceImpl
 import javax.inject.Inject
 
-class CarsRemoteDataSource @Inject constructor(private val provider: CarsRepositoryImpl) :
+class CarsRemoteDataSource @Inject constructor(private val provider: DataSourceImpl) :
     CarRepository {
     override suspend fun getCarsList(): List<CarSearchResponseItem> {
         return provider.getCars().map { it ->
