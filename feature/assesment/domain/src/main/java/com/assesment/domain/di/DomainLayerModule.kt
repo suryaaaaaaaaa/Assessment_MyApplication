@@ -1,6 +1,6 @@
 package com.assesment.domain.di
 
-import com.assesment.domain.repo.RepoInterface
+import com.assesment.domain.repo.CarRepository
 import com.assesment.domain.usecases.GetCarsListUseCase
 import dagger.Module
 import dagger.Provides
@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object DomainLayerModule {
     @Provides
-    fun getCarListUseCase(repo: RepoInterface): GetCarsListUseCase{
+    fun getCarListUseCase(repo: CarRepository): GetCarsListUseCase {
         return GetCarsListUseCase(repo)
     }
 }

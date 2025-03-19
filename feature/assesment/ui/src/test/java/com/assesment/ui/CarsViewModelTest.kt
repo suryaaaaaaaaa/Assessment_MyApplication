@@ -1,7 +1,7 @@
 package com.assesment.ui
 
 import com.assesment.domain.model.CarSearchResponseItem
-import com.assesment.domain.repo.RepoInterface
+import com.assesment.domain.repo.CarRepository
 import com.assesment.domain.usecases.GetCarsListUseCase
 import com.assesment.ui.navigation.viewmodel.CarsViewModel
 import com.core.common.component.UiEvent
@@ -20,11 +20,11 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-
 class CarsViewModelTest {
 
     private lateinit var viewModel: CarsViewModel
     private lateinit var useCase: GetCarsListUseCase
+
     @ExperimentalCoroutinesApi
     private val testDispatcher = TestCoroutineDispatcher()
 
@@ -45,23 +45,25 @@ class CarsViewModelTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun getCars_isSuccess()=runBlockingTest{
-        useCase= mockk<GetCarsListUseCase>()
-        val carList=listOf(CarSearchResponseItem(
-            1,
-            emptyList(),
-            "",
-            0,
-            "",
-            "",
-            1,
-            "",
-            "",
-            "",
-            ""
-        ))
+    fun getCars_isSuccess() = runBlockingTest {
+        useCase = mockk<GetCarsListUseCase>()
+        val carList = listOf(
+            CarSearchResponseItem(
+                1,
+                emptyList(),
+                "",
+                0,
+                "",
+                "",
+                1,
+                "",
+                "",
+                "",
+                ""
+            )
+        )
 
-        mockk<RepoInterface>{
+        mockk<CarRepository> {
             coEvery { useCase.invoke() } returns flowOf(UiEvent.Success(data = carList))
         }
         viewModel = CarsViewModel(useCase)
@@ -74,9 +76,9 @@ class CarsViewModelTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun getCars_isLoading() =runBlockingTest {
-        useCase= mockk<GetCarsListUseCase>()
-        mockk<RepoInterface>{
+    fun getCars_isLoading() = runBlockingTest {
+        useCase = mockk<GetCarsListUseCase>()
+        mockk<CarRepository> {
             coEvery { useCase.invoke() } returns flowOf(UiEvent.Loading())
         }
         viewModel = CarsViewModel(useCase)
@@ -91,10 +93,10 @@ class CarsViewModelTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun getCars_isFail() =runBlockingTest {
-        useCase= mockk<GetCarsListUseCase>()
+    fun getCars_isFail() = runBlockingTest {
+        useCase = mockk<GetCarsListUseCase>()
 
-        mockk<RepoInterface>{
+        mockk<CarRepository> {
             coEvery { useCase.invoke() } returns flowOf(UiEvent.Error())
         }
         viewModel = CarsViewModel(useCase)
@@ -102,6 +104,5 @@ class CarsViewModelTest {
         delay(50)
         val observedError = viewModel.carList.value
         assertEquals("", observedError.error)
-
     }
 }

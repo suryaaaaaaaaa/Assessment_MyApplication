@@ -1,7 +1,6 @@
 package com.assesment.ui
 
-import com.assesment.domain.repo.RepoInterface
-import com.assesment.domain.usecases.GetCarsListUseCase
+import com.assesment.domain.repo.CarRepository
 import com.assesment.domain.usecases.GetImageUseCase
 import com.assesment.ui.navigation.viewmodel.ImageViewModel
 import io.mockk.coEvery
@@ -22,6 +21,7 @@ class ImageViewModelTest {
 
     private lateinit var useCase: GetImageUseCase
     private lateinit var viewModel: ImageViewModel
+
     @ExperimentalCoroutinesApi
     private val testDispatcher = TestCoroutineDispatcher()
 
@@ -38,11 +38,12 @@ class ImageViewModelTest {
         Dispatchers.resetMain()
         testDispatcher.cleanupTestCoroutines()
     }
-    @Test
-    fun getImage()= runTest{
-        useCase= mockk<GetImageUseCase>()
 
-        mockk<RepoInterface>{
+    @Test
+    fun getImage() = runTest {
+        useCase = mockk<GetImageUseCase>()
+
+        mockk<CarRepository> {
             coEvery { useCase.getImageList() } returns listOf("image")
         }
         viewModel = ImageViewModel(useCase)

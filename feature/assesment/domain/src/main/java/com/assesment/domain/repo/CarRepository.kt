@@ -1,7 +1,8 @@
 package com.assesment.domain.repo
+
 import com.assesment.domain.model.CarSearchResponseItem
 
-interface RepoInterface {
+interface CarRepository {
     suspend fun getCarsList(): List<CarSearchResponseItem>
 
 }

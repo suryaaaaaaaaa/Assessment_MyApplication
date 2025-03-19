@@ -19,10 +19,9 @@ class ImageViewModel @Inject constructor(
 
     init {
         getImages(getImageUseCase.getImageList())
-
     }
 
-    fun getImages(images: List<String>) =viewModelScope.launch {
+    fun getImages(images: List<String>) = viewModelScope.launch {
         _imageList.value = ImageStateHolder(images = images)
-        }
     }
+}

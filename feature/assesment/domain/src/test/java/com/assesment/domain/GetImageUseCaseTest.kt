@@ -8,15 +8,15 @@ import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
-class GetImageUseCase {
+class GetImageUseCaseTest {
 
     @Test
-    fun canGetImage()= runTest{
-        val useCase= mockk<GetImageUseCase>()
-        mockk<SavedStateHandle>{
+    fun canGetImage() = runTest {
+        val useCase = mockk<GetImageUseCase>()
+        mockk<SavedStateHandle> {
             coEvery { (useCase.getImageList()) } returns listOf("Image")
         }
-        val result= useCase.getImageList().toList()
-        assertEquals(listOf("Image"),result)
+        val result = useCase.getImageList().toList()
+        assertEquals(listOf("Image"), result)
     }
 }

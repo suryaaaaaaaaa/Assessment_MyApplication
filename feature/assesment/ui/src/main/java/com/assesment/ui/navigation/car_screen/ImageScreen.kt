@@ -1,4 +1,5 @@
 package com.assesment.ui.navigation.car_screen
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -35,7 +36,7 @@ fun ImageScreen(imagesViewModel: ImageViewModel = hiltViewModel()) {
         },
         modifier = Modifier.fillMaxSize()
     ) {
-    ImagesContent(vm = imagesViewModel)
+        ImagesContent(vm = imagesViewModel)
     }
 }
 

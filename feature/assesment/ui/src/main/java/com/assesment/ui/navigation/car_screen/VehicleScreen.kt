@@ -45,8 +45,8 @@ fun CarSearchScreen(
 
 @Composable
 fun CarsContent(vm: CarsViewModel, onImageClick: (String) -> Unit) {
-   val result =  vm.carList.value
-    if (result.isLoading){
+    val result = vm.carList.value
+    if (result.isLoading) {
         LoadingBar()
         Box(
             contentAlignment = Alignment.Center,
@@ -55,12 +55,12 @@ fun CarsContent(vm: CarsViewModel, onImageClick: (String) -> Unit) {
             CircularProgressIndicator()
         }
     }
-     (result.data.let {
-           if(it?.isNotEmpty() == true){
-               result.data?.let { it1 -> BindList(it1, onImageClick = onImageClick) }
-           }
-        })
-    }
+    (result.data.let {
+        if (it?.isNotEmpty() == true) {
+            result.data?.let { it1 -> BindList(it1, onImageClick = onImageClick) }
+        }
+    })
+}
 
 @Composable
 fun CarImage(item: CarSearchResponseItem) {
@@ -117,7 +117,7 @@ fun ListItem(item: CarSearchResponseItem, onClick: (CarSearchResponseItem) -> Un
 
                 Text(
                     text = item.fuel,
-                    style =Typography.titleSmall
+                    style = Typography.titleSmall
                 )
                 Spacer(modifier = Modifier.height(8.dp))
 

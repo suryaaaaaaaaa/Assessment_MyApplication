@@ -20,8 +20,9 @@ class CarsViewModel @Inject constructor(
 
     private val _carList = mutableStateOf(CarSearchStateHolder())
     val carList: State<CarSearchStateHolder> get() = _carList
+
     init {
-            getCar()
+        getCar()
     }
 
     fun getCar() = viewModelScope.launch {
