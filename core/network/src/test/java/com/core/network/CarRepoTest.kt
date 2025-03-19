@@ -1,6 +1,6 @@
 package com.core.network
 
-import com.core.network.api.ApiService
+import com.core.network.api.DataSource
 import com.core.network.model.CarSearchResponseItem
 import com.core.network.repository.CarsRepositoryImpl
 import io.mockk.coEvery
@@ -30,7 +30,7 @@ class CarRepoTest {
         )
         )
 
-        mockk<ApiService>{
+        mockk<DataSource>{
             coEvery { repo.getCars() } returns carList
         }
 

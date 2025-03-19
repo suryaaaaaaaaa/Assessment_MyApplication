@@ -1,6 +1,6 @@
 package com.core.network.di
 
-import com.core.network.api.ApiService
+import com.core.network.api.DataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -52,8 +52,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): DataSource {
+        return retrofit.create(DataSource::class.java)
     }
 
     @Provides

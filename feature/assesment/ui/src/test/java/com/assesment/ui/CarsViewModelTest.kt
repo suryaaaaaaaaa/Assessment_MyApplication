@@ -32,8 +32,6 @@ class CarsViewModelTest {
     @Before
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-
-
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
